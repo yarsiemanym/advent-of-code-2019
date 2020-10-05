@@ -76,5 +76,22 @@ func buildPasswords(root string, targetLength int, doubledDigit *int) []string {
 }
 
 func isValid(password string, min string, max string) bool {
-	return password >= min && password <= max
+
+	if password < min || password > max {
+		return false
+	}
+
+	count := 1
+
+	for i := 1; i < len(password); i++ {
+		if password[i] == password[i-1] {
+			count++
+		} else if count == 2 {
+			return true
+		} else {
+			count = 1
+		}
+	}
+
+	return count == 2
 }
