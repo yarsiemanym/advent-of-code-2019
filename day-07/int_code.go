@@ -54,7 +54,7 @@ func (intCode IntCode) executeInstruction(pointer *int) {
 	if opCode == "99" {
 		fmt.Printf("[%v] Terminating.\n", intCode.Name)
 		*pointer = len(intCode.values)
-		waitGroup.Done()
+		intCode.WaitGroup.Done()
 	} else {
 
 		switch opCode {
