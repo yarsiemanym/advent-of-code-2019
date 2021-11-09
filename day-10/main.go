@@ -14,7 +14,7 @@ func main() {
 	asteroids := readFile(file)
 	discoverAllSightLines(asteroids)
 	newMonitoringStation := findAsteroidWithHighestVisibility(asteroids)
-	fmt.Printf("New monitoring Station: {x: %v, y: %v}\n", newMonitoringStation.Location.X, newMonitoringStation.Location.Y)
+	fmt.Printf("New monitoring station: {x: %v, y: %v}\n", newMonitoringStation.Location.X, newMonitoringStation.Location.Y)
 	fmt.Printf("Can detect %v other asteroids.\n", len(newMonitoringStation.CanSee))
 
 	laserLocation := newMonitoringStation.Location
